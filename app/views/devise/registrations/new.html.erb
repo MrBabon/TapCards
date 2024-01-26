@@ -1,13 +1,27 @@
-<h2>Sign up</h2>
+<div class="flex w-full justify-between items-center pt-8 pb-3 pl-3  bg-TapCard-charcoal">
+  <%= link_to :back do %>
+    <%= image_tag "chevron-left.svg", alt: "chevron", class: "w-5" %>
+  <% end %>
+  <div class="flex-1 text-center mr-3">
+    <h2 class="mx-auto text-TapCard-lightGray uppercase">Sign in</h2>
+  </div>
+  <div class="w-5"></div>
+</div>
+<div class="flex items-center justify-center my-20">
+  <h1 class=" text-TapCard-charcoal text-3xl uppercase">TapCard</h1>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
+    <div class="text-center">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class: "rounded w-[85%]" },
+                  label_html: { class: "block text-center" } %>
+    </div>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
