@@ -8,3 +8,8 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+.required-field::before {
+  content: " *";
+  color: red;  // ou la couleur de votre choix
+  margin-right: 3px;  // ajustez la marge si nécessaire
+}
